@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  auth-service:
+    build: ./auth-service
+    ports:
+      - "5001:5001"
+
+  products-service:
+    build: ./products-service
+    ports:
+      - "5002:5002"
+
+  orders-service:
+    build: ./orders-service
+    ports:
+      - "5003:5003"
+
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "5000:5000"
+    depends_on:
+      - auth-service
+      - products-service
+      - orders-service
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api-gateway
