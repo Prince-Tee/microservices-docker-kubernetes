@@ -1,4 +1,4 @@
-# Multi-Service App: Docker + Kubernetes
+# Multi-Service App: Docker + Kubernete
 
 This project demonstrates how to build and deploy a **multi-service application** using Docker and Kubernetes.
 
